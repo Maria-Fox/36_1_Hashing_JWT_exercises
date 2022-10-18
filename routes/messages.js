@@ -53,10 +53,9 @@ router.post("/",
   ensureLoggedIn,
   async function (req, res, next){
     try {
-      // let from_username = req.user.username;
+      let from_username = req.user.username;
 
       // the model class destructures the msg body & to_username
-
       let new_message = await Message.create(req.body);
 
       return res.json({"message" : new_message});
